@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="model.patientScreenController">
+   <children>
+      <TableView layoutX="57.0" layoutY="449.0" prefHeight="262.0" prefWidth="1002.0">
+        <columns>
+          <TableColumn prefWidth="141.0" text="Date of Service" />
+          <TableColumn prefWidth="189.0" text="Procedure" />
+            <TableColumn prefWidth="150.0" text="Charge" />
+            <TableColumn prefWidth="191.0" text="Payment" />
+            <TableColumn prefWidth="232.0" text="Balance" />
+        </columns>
+      </TableView>
+      <Label layoutX="95.0" layoutY="118.0" text="First Name:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="163.0" text="Last Name:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="216.0" text="Date of Birth:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="113.0" layoutY="265.0" text="Gender: ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="458.0" layoutY="53.0" text="Patient Information">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="309.0" prefHeight="21.0" prefWidth="87.0" text="Insurance:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="309.0" text="Phone Number:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="125.0" layoutY="352.0" text="E-mail:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <GridPane gridLinesVisible="true" layoutX="600.0" layoutY="121.0" prefHeight="151.0" prefWidth="473.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="129.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="344.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="21.0" prefWidth="171.0" text="Street Address:" GridPane.halignment="LEFT">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="City:" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="State:" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="Zipcode:" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="cityLabel" prefHeight="21.0" prefWidth="286.0" text="City" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="streetAddressLabel" prefHeight="21.0" prefWidth="286.0" text="Street Address" GridPane.columnIndex="1">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="stateLabel" prefHeight="21.0" prefWidth="286.0" text="State" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="zipLabel" prefHeight="21.0" prefWidth="286.0" text="Zipcode" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets left="5.0" />
+         </opaqueInsets>
+      </GridPane>
+      <Button fx:id="logoutBtn" layoutX="994.0" layoutY="31.0" mnemonicParsing="false" onAction="#changeToLogin" text="Logout" />
+      <Button fx:id="editPtInfoBtn" layoutX="881.0" layoutY="385.0" mnemonicParsing="false" onAction="#editPtInfo" text="Edit Patient Information" />
+      <Button fx:id="makePmtBtn" layoutX="58.0" layoutY="729.0" mnemonicParsing="false" onAction="#makePayment" text="Make Payment" />
+      <Label fx:id="fnameLabel" layoutX="184.0" layoutY="118.0" prefHeight="21.0" prefWidth="245.0" text="John" />
+      <Label fx:id="lnameLabel" layoutX="184.0" layoutY="163.0" prefHeight="21.0" prefWidth="245.0" text="Doe" />
+      <Label fx:id="dobLabel" layoutX="184.0" layoutY="216.0" prefHeight="21.0" prefWidth="245.0" text="mm/dd/yyyy" />
+      <Label fx:id="genderLabel" layoutX="184.0" layoutY="265.0" prefHeight="21.0" prefWidth="245.0" text="Male/Female/Other" />
+      <Label fx:id="phoneLabel" layoutX="184.0" layoutY="309.0" prefHeight="21.0" prefWidth="245.0" text="000-000-0000" />
+      <Label fx:id="emailLabel" layoutX="184.0" layoutY="352.0" prefHeight="21.0" prefWidth="245.0" text="john.doe@email.com" />
+      <Label layoutX="714.0" layoutY="309.0" prefHeight="21.0" prefWidth="245.0" text="Insurance Name" />
+      <Label fx:id="pmtResult" layoutX="204.0" layoutY="734.0" />
+      <Button fx:id="addCCBtn" layoutX="735.0" layoutY="385.0" mnemonicParsing="false" onAction="#addCreditCardInfo" text="Add Credit Card" />
+   </children>
+</AnchorPane>

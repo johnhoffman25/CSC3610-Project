@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="model.TableController">
+   <children>
+      <AnchorPane prefHeight="530.0" prefWidth="737.0">
+         <children>
+            <TableView fx:id="table" layoutX="14.0" layoutY="193.0" prefHeight="269.0" prefWidth="712.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="124.0" text="ID" />
+                <TableColumn fx:id="col_fn" prefWidth="208.0" text="First" />
+                  <TableColumn fx:id="col_ln" prefWidth="222.0" text="Last" />
+                  <TableColumn fx:id="col_dob" prefWidth="157.0" text="DOB" />
+              </columns>
+            </TableView>
+            <Label layoutX="50.0" layoutY="134.0" text="Search:" />
+            <TextField layoutX="117.0" layoutY="129.0" prefHeight="31.0" prefWidth="464.0" />
+            <Button layoutX="620.0" layoutY="129.0" mnemonicParsing="false" text="Submit" />
+            <Label layoutX="189.0" layoutY="27.0" text="Spartan Health Care Management" textFill="#002ed6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="292.0" layoutY="74.0" text="Patient Lookup" textFill="#002ed6">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Button fx:id="selectBtn" layoutX="657.0" layoutY="474.0" mnemonicParsing="false" onAction="#changeToPtScreen" text="Select" />
+            <Button fx:id="logoutBtn" layoutX="655.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: orange;" text="Logout">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0000009c" offsetX="1.0" offsetY="1.0" />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

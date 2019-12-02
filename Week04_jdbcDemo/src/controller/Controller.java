@@ -4,8 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import model.StudentDAO;
-import model.StudentDAO_Test;
+import model.StudentDAO_Test2;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
-	private StudentDAO_Test studentDAO_Test;
+	private StudentDAO_Test2 studentDAO_Test2;
 
 	/**
 	 * Use this to set up the table for the database.
@@ -30,37 +29,19 @@ public class Controller implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// Calling here to check if table exists.
-		studentDAO_Test = new StudentDAO_Test();
-		studentDAO_Test.createIfNone();
+		studentDAO_Test2 = new StudentDAO_Test2();
+		studentDAO_Test2.createIfNone();
 	}
 
 	@FXML
-	private TextField patientID;
+	private TextField userID;
 
 	@FXML
-	private TextField fname;
-
-	@FXML
-	private TextField lname;
-
-	@FXML
-	private TextField email;
-
-	@FXML
-	private TextField address;
-
-	@FXML
-	private TextField phone;
-
-	@FXML
-	private TextField dob;
-
-	@FXML
-	private Label lblDisplay;
+	private TextField password;
 
 	@FXML
 	public void myAction() {
-		studentDAO_Test.addNewPatient(patientID.getText(), fname.getText(), lname.getText(), email.getText(), address.getText(), phone.getText(), dob.getText());
+		studentDAO_Test2.addNewUser(userID.getText(), password.getText());
 		// lblDisplay.setText(arg0);
 	}
 
